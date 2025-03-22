@@ -3,15 +3,6 @@
 - name: "DOCKER VM: Configure base"
   ansible.builtin.include_role:
     name: geerlingguy.docker
-  vars:
-    docker_packages:
-      - "docker-{{ docker_edition }}"
-      - "docker-{{ docker_edition }}-cli"
-      - "docker-{{ docker_edition }}-rootless-extras"
-    docker_edition: 'ce'
-    docker_packages_state: present
-    docker_users:
-      - zabbix  # Add zabbix user to allow Zabbix agent2 to monitor it.
 
 - name: Get host info
   community.docker.docker_host_info:

@@ -20,3 +20,4 @@
         project_name: "{{ item.name }}"
         state: "{{ item.state | default('absent') }}"
         definition: "{{ item.definition }}"
+        pull: "{{ pull_policy | default(omit) }}"
